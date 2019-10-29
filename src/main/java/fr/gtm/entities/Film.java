@@ -15,6 +15,7 @@ import javax.persistence.JoinTable;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name="films")
@@ -33,7 +34,6 @@ private LocalDate dateSortie;
 private int duree;//durée du film en minutes
 
 @ManyToMany(mappedBy="films", fetch=FetchType.EAGER)
-//@Transient
 private List<Acteur> acteurs = new ArrayList<Acteur>();
 
 
