@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -37,10 +38,10 @@ private int duree;//durée du film en minutes
 //@Transient
 private List<Acteur> acteurs = new ArrayList<Acteur>();
 
+
 @ManyToMany(fetch = FetchType.EAGER)
 @JoinTable(name="film_acteur",joinColumns = @JoinColumn(name="fk_film"), inverseJoinColumns =@ JoinColumn(name="fk_acteur"))
-@MapKeyColumn(name = "role")
-private Map<String, Acteur> role = new HashMap<String, Acteur>();
+private Map<Role, Acteur> role = new HashMap<Role, Acteur>();
 
 public String getTitre() {
 	return titre;
@@ -97,11 +98,11 @@ public String toString() {
 			+ ", d'une durée de: " + duree + " minutes, avec les acteurs suivants: " + acteurs;
 }
 
-public Map<String, Acteur> getRole() {
+public Map<Role, Acteur> getRole() {
 	return role;
 }
 
-public void setRole(Map<String, Acteur> role) {
+public void setRole(Map<Role, Acteur> role) {
 	this.role = role;
 }
 
