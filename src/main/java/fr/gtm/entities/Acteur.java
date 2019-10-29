@@ -101,7 +101,7 @@ public void setId(long id) {
 
 @Override
 public String toString() {
-	return "Acteur [civilite=" + civilite + ", nom=" + nom + ", prenom=" + prenom + "]";
+	return prenom + " " + nom;
 }
 
 @Override

@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -94,8 +93,8 @@ public void setId(long id) {
 
 @Override
 public String toString() {
-	return "Film [id=" + id + ", titre=" + titre + ", realisateur=" + realisateur + ", dateSortie=" + dateSortie
-			+ ", duree=" + duree + ", acteurs=" + acteurs + "]";
+	return "Film: "+ titre + ", réalisé par: " + realisateur + ", sortie le: " + dateSortie
+			+ ", d'une durée de: " + duree + " minutes, avec les acteurs suivants: " + acteurs;
 }
 
 public Map<String, Acteur> getRole() {
