@@ -5,7 +5,9 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import javax.persistence.CollectionTable;
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -14,6 +16,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinTable;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
@@ -38,7 +41,6 @@ private LocalDate dateMort;
 
 @ManyToMany(fetch=FetchType.EAGER)
 @JoinTable(name="film_acteur", joinColumns=@JoinColumn(name="fk_film"), inverseJoinColumns=@JoinColumn(name="fk_acteur"))
-//@Transient
 private List<Film> films;
 
 public String getCivilite() {
